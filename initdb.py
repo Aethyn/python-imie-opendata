@@ -1,11 +1,12 @@
 import psycopg2
+import env
 
 relationnal_connection_data = {
-    "dbname":"irigo",
-    "user":"irigo",
-    "password":"irigo",
-    "host":"ns3114546.ip-176-31-248.eu",
-    "port":39852
+    "dbname": env.dbname,
+    "user": env.user,
+    "password": env.password,
+    "host": env.host,
+    "port": env.port
 }
 
 with psycopg2.connect(**relationnal_connection_data) as connection:
@@ -38,4 +39,3 @@ with psycopg2.connect(**relationnal_connection_data) as connection:
         cursor.execute("SELECT * FROM pg_catalog.pg_tables;")
         rows = cursor.fetchall()
         print("tables", "line" in [r[1] for r in rows])
-        

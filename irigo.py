@@ -1,12 +1,13 @@
 import bonobo
 import requests
+import env
 
 relationnal_connection_data = {
-    "dbname":"",
-    "user":"",
-    "password":"",
-    "host":"",
-    "port":0
+    "dbname": env.dbname,
+    "user": env.user,
+    "password": env.password,
+    "host": env.host,
+    "port": env.port
 }
 
 def fetch_desserte_data():
